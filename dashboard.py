@@ -22,7 +22,7 @@ CODEBOOK_FILE = "Survey Codebook.xlsx"
 def load_codebook(filepath):
     """Loads the codebook to map variable names (e.g., SQ04) to descriptions."""
     try:
-        df = pd.read_csv(filepath)
+        df = pd.read_excel(filepath)
         # Create a dictionary: {'SQ04': 'Gender', ...}
         # Adjust column names 'Variable' and 'Variable Information' based on your CSV structure
         return pd.Series(df['Variable Information'].values, index=df['Variable']).to_dict()
@@ -104,3 +104,4 @@ if selected_file:
                     )
 
                 st.plotly_chart(fig, use_container_width=True)
+
