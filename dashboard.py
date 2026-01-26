@@ -102,6 +102,4 @@ if selected_file:
                         title=f"Frequency of {selected_col}",
                         labels={'count': 'Count', selected_col: selected_col}
                     )
-
                 st.plotly_chart(fig, use_container_width=True)
-
